@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/0.9.10/js/jquery.imgareaselect.js"></script>
+    <script src="jquery.selectareas.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/0.9.10/css/imgareaselect-animated.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/imgareaselect/0.9.10/css/imgareaselect-default.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <link id="css" rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="jquery.selectareas.css">
+</head>
+<body>
+<div class="row">
+    <div class="coll" id="coll1" style="background-color:#555;height: auto;width: 15%;border-bottom-right-radius: 10px;">
+        <div id="myNav" class="over">
+            <a href="javascript:void(0)" class="closebtn" id="closebtn" onclick="closeNav()">&times;</a>
+            <div class="over-content">
+                <div id = "cont"></div>
+            </div>
+        </div>
+        <img src="Image/logo-white.svg" style="width: 120px; margin-top: -11px;margin-bottom: -18px">
+        <button class="overbut" onclick="openNav()" id="overbut"><p class="Pmenu">&#9776;</p></button>
+    </div>
+    <div class="coll" id="coll3" style="background-color:#333;width: 70%;height: 1200px;">
+            <h1 id="nbPage" style="display: none"></h1>
+        <div class="row">
+            <div class="coll" id="Pr" style="width:8%;font-size: 100%;margin-top: 35%;margin-left: 45px">
+                <button class="prev" id="prev" onclick="aff(className)" style="margin: 0 auto"><img src="Image/last-track-left-arrow.png" style="width: 100%"></button>
+            </div>
+            <div class="coll" style="width: 80%;margin-left:28px;">
+                <div class="cache1" style="display: none" id="cache1"></div>
+                <div id = "modification"></div>
+                <div id = "new"></div>
+                <div class="cache2" style="display: none" id="cache2"></div>
+            </div>
+            <div class="coll"  id="Ne" style="width: 8%;font-size: 100%;margin-top: 35%;margin-left: -74px">
+                <button class="next" id="next" onclick="aff(className)"><img src="Image/skip-track.png" style="width: 100%"></button>
+            </div>
+        </div>
+    </div>
+    <div class="coll" id="coll2" style="background-color:#555;height: auto;width: 15%;border-bottom-left-radius: 10px;">
+            <div id="myNav1" class="o">
+                <a href="javascript:void(0)" class="close" id="close" onclick="NavClose()">&times;</a>
+                <div class="o-content" id="ocontent">
+                    <label onchange="modenuitjour()" class="switch">
+                        <input type="checkbox" id="checkbox">
+                        <span class="slider round"></span>
+                        <p id="modele" style="float: right;margin-right: -400%;margin-top: -10%; color: #dddddd">Mode nuit</p>
+                    </label>
+                    <div id="butcont"><br>
+                        <p style="float: right; margin-right: 10%;margin-bottom: -30%">Zoomer</p>
+                        <button class="zoom" onclick="aff(className)"><img src="Image/plus.png" style="width: 30%"></button><br><br>
+                        <p style="float: right; margin-right: 10%;margin-bottom: -30%">Dézoomer</p>
+                        <button class="d-zoom" onclick="aff(className)"><img src="Image/moins.png" style="width: 30%"></button><br><br>
+                        <p style="float: right; margin-right: 10%;margin-bottom: -30%">Sauvegarde</p>
+                        <button class="AutoSave" onclick="AutoSave()"><img src="Image/save.png" style="width: 30%"></button><br><br>
+                        <p style="float: right; margin-right: 10%;margin-bottom: -30%">Revenir</p>
+                        <button class="Z" onclick="CtrlZ()"><img src="Image/refresh.png" style="width: 30%"><p></p></button><br><br>
+                        <p style="float: right; margin-right: 10%;margin-bottom: -30%">Avancer</p>
+                        <button class="A" onclick="CtrlA()"><img src="Image/refresh.png" style="width: 30%"></button><br><br>
+                        <p style="float: right; margin-right: 10%;margin-bottom: -10%">Ajouter<br>une<br>case</p>
+                        <button class="ajout" id ="add" onclick="modifCanvas(event)"><img src="Image/add.png" style="width: 30%"></button><br><br>
+                        <p style="float: right; margin-right: 10%;margin-bottom: -10%">Modifier<br>la<br>page</p>
+                        <button class="Mod" onclick="aff(className)"><img src="Image/scissors.png" style="width: 30%;"></button><br><br>
+                        <p style="float: right; margin-right: 10%;margin-bottom: -5%;margin-left: -30px">Resize</p>
+                        <button class="resize" onclick="resizable(event)"><img src="Image/stretching.png" style="width: 30%;margin-left: -20%"></button><br><br>
+                        <p style="float: right; margin-right: 6%;margin-bottom: -10%;margin-left: -5px">Télecharger</p>
+                        <button class="json" onclick="addtext()"><img src="Image/download.png" style="width: 35%;"></button>
+                    </div>
+                </div>
+            </div>
+            <button class="obut" id="obut" onclick="NavOpen()"><p class="Pmenu1">&#9776;</p></button>
+            <input type="file" id="file-input" onchange="OpenJson(event)" style="float: right;width: 185px;margin-top: -3px;"/>
+        </div>
+</div>
+<script>
+    function openNav() {
+        document.getElementById("myNav").style.width = "20%";
+    }
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+    function NavOpen() {
+        document.getElementById("myNav1").style.width = "20%";
+    }
+    function NavClose() {
+        document.getElementById("myNav1").style.width = "0%";
+    }
+</script>
+</body>
+</html>

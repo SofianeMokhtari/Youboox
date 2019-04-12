@@ -1,0 +1,417 @@
+body  {
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: relative;
+    float: left;
+}
+
+.image {
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.overlay {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    overflow: hidden;
+    width: 0;
+    height: 6%;
+    transition: .5s ease;
+}
+
+.container:hover .overlay {
+    width: 100%;
+}
+
+.container:hover .image {
+    opacity: 0.5;
+}
+
+.text {
+    background-color: black;
+    border-radius: 10%;
+    color: white;
+    white-space: nowrap;
+    position: absolute;
+    width: 50px;
+    top: 2px;
+    height: 20px;
+    left: 50%;
+}
+
+.textzoom {
+    background-color: black;
+    border-radius: 10%;
+    color: white;
+    white-space: nowrap;
+    position: absolute;
+    width: 50px;
+    top: 2px;
+    height: 20px;
+    right: 10%;
+}
+
+.text1 {
+    background-color: black;
+    border-radius: 10%;
+    color: white;
+    white-space: nowrap;
+    position: absolute;
+    width: 50px;
+    top: 3px;
+    left: 50%;
+}
+
+.num {
+    margin-top: -3px;
+    margin-left: 30%;
+    color: beige;
+}
+
+h2 {
+    top: 10px;
+}
+
+#cont {
+    border-radius: 10px;
+    height:945px;
+    overflow: auto;
+    background-color: #555;
+}
+
+#butcont {
+    border-radius: 10px;
+    height:945px;
+    overflow: auto;
+    background-color: #555;
+}
+
+#new {
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+.choice {
+    background-color: #333;
+    border-radius: 10px;
+}
+
+li {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    list-style: none;
+    margin-left: 5%;
+}
+
+img .imgSrc {
+    border-radius: 10px;
+}
+
+button {
+    border: none;
+}
+
+.A {
+    background: transparent;
+    margin-left: -50%;
+}
+
+.Z {
+    background: transparent;
+    margin-left: -50%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.AutoSave {
+    background: transparent;
+    margin-left: -50%;
+}
+
+.prev {
+    background: transparent;
+}
+
+.next {
+    background: transparent;
+}
+
+.zoom {
+    background: transparent;
+    margin-left: -50%;
+}
+
+.d-zoom {
+    background: transparent;
+    margin-left: -50%;
+}
+
+.json {
+    background-color: #444444;
+    margin-left:12%;
+    font-size: 30px;
+    margin-left: -40%;
+}
+
+#prevP {
+    position:absolute;
+    border-radius: 50%;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    top:80%;
+    left:30%;
+}
+
+#suivP {
+    position:absolute;
+    border-radius: 50%;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    top:80%;
+    right:30%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.coll {
+    float: left;
+    width: 15%;
+    padding: 10px;
+}
+
+.Pmenu {
+    margin-top: -10px;
+}
+
+.overbut {
+    font-size: 30px;
+    background-color: #555;
+    color: black;
+    height: 26px;
+    border-bottom-right-radius: 10px;
+    float: right;
+    margin-top: -4px;
+    margin-bottom: -4px;
+}
+
+.overbut:hover {
+    background-color: #666;
+    color: black;
+}
+
+.over {
+    width: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.over-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.over a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.over a:hover, .over a:focus {
+    color: #f1f1f1;
+}
+
+.over .closebtn {
+    float: right;
+    font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+    .over a {font-size: 20px}
+    .over .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.Pmenu1 {
+    margin-top: -10px;
+}
+
+.obut {
+    font-size: 30px;
+    background-color: #555;
+    color: black;
+    height: 26px;
+    border-bottom-left-radius: 10px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+
+.obut:hover {
+    background-color: #666;
+    color: black;
+}
+
+.o {
+    width: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #222;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.o-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.o a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.o a:hover, .o a:focus {
+    color: #f1f1f1;
+}
+
+.o .close {
+    float: left;
+    font-size: 30px;
+}
+
+@media screen and (max-height: 450px) {
+    .o a {font-size: 20px}
+    .o .close {
+        font-size: 40px;
+        top: 15px;
+        left: 35px;
+    }
+}
+
+.ajout {
+    background-color: #555;
+    margin-left: -20%;
+}
+
+.Mod {
+    background-color: #555;
+    margin-left: -18%;
+}
+
+.json {
+    background-color: #555;
+    margin-left: -20%;
+}
+
+.resize {
+    background-color: #555;
+    margin-left: -20%;
+}
+
+#edata:hover {
+    color: red;
+}
+
+#data:hover {
+    color: red;
+}
+
+.switch {
+    position: relative;
+    margin-left: -50%;
+    display: inline-block;
+    width: 45px;
+    height: 12px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    left: 4px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
